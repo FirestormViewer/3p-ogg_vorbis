@@ -95,7 +95,12 @@ case "$AUTOBUILD_PLATFORM" in
         popd
         
         pushd "$VORBIS_SOURCE_DIR"
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$stage/lib"
+	if [ -z ${LD_LIBRARY_PATH+x} ]
+	then
+            export LD_LIBRARY_PATH="$stage/lib"
+	else
+            export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$stage/lib"
+	fi
         CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage"
         make
         make install
