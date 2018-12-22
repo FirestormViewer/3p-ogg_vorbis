@@ -12,10 +12,10 @@ m4data_DATA = ogg.m4
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = ogg.pc
 
-EXTRA_DIST = README AUTHORS CHANGES COPYING \
+EXTRA_DIST = README.md AUTHORS CHANGES COPYING \
 	libogg.spec libogg.spec.in \
 	ogg.m4 ogg.pc.in ogg-uninstalled.pc.in \
-	macos macosx win32
+	macosx win32
 
 dist-hook:
 	for item in $(EXTRA_DIST); do \

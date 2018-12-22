@@ -20,7 +20,7 @@ else
 fi
 
 OGG_SOURCE_DIR="libogg"
-OGG_VERSION="$(sed -n 's/^ VERSION=\(.*\)$/\1/p' "$OGG_SOURCE_DIR/configure")"
+OGG_VERSION="$(sed -n "s/^ VERSION='\(.*\)'/\1/p" "$OGG_SOURCE_DIR/configure")"
 
 VORBIS_SOURCE_DIR="libvorbis"
 VORBIS_VERSION="$(sed -n "s/^PACKAGE_VERSION='\(.*\)'/\1/p" "$VORBIS_SOURCE_DIR/configure")"
